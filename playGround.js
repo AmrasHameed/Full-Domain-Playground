@@ -176,3 +176,44 @@ const { error } = require("console");
 // let num = 123.456789;
 // console.log(typeof num.toFixed(0)); 
 
+// function factorial(n) {
+//     if(n == 0 || n == 1) {
+//         return n
+//     }
+//     return n * factorial(n - 1)
+// }
+
+// console.log(factorial(5))
+
+// function fin(n) {
+//     if(n == 0) {
+//         return n
+//     }
+//     fin(n - 1)
+//     console.log(n)
+// }
+
+// fin(10)
+
+// function reverse (str, i) {
+//     if(str.length == i) {
+//         return ""
+//     }
+//     return reverse(str, i + 1) + str[i]
+// }
+
+// console.log(reverse('amras', 0))
+
+let obj = {}
+function sum(a,b) {
+    if(obj[a + b]) {
+        console.log(`Fetching result from cache `);
+        return obj[a + b]
+    }
+    console.log(`Calculating`);
+    obj[a + b] = a + b
+    return obj[a + b]
+}
+
+console.log(sum(1,2))
+console.log(sum(1,2))
