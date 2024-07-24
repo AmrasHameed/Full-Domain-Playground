@@ -86,10 +86,10 @@ const { error } = require("console");
 // async function getData() {
 //     return Promise.resolve('I made it!');
 //   }
-  
+
 //   async function main() {
 //     const result = await getData();
-//     console.log(result); 
+//     console.log(result);
 //   }
 //   main()
 //   console.log(result);
@@ -124,7 +124,6 @@ const { error } = require("console");
 // let callFn = fullName.bind(name,'Kannur')
 // callFn('Kerala')
 
-
 // function* myFn() {
 //     yield 'Amras'
 //     yield 'Hameed'
@@ -152,8 +151,7 @@ const { error } = require("console");
 //     return numbers.reduce((acc, num) => acc + num, 0);
 // }
 
-// console.log(sum(1, 2, 3, 4, 5, 5)); 
-
+// console.log(sum(1, 2, 3, 4, 5, 5));
 
 // function* x() {
 //     yield "Hello"
@@ -174,7 +172,7 @@ const { error } = require("console");
 // console.log(map1)
 
 // let num = 123.456789;
-// console.log(typeof num.toFixed(0)); 
+// console.log(typeof num.toFixed(0));
 
 // function factorial(n) {
 //     if(n == 0 || n == 1) {
@@ -204,16 +202,109 @@ const { error } = require("console");
 
 // console.log(reverse('amras', 0))
 
-let obj = {}
-function sum(a,b) {
-    if(obj[a + b]) {
-        console.log(`Fetching result from cache `);
-        return obj[a + b]
-    }
-    console.log(`Calculating`);
-    obj[a + b] = a + b
-    return obj[a + b]
+// let obj = {}
+// function sum(a,b) {
+//     if(obj[a + b]) {
+//         console.log(`Fetching result from cache `);
+//         return obj[a + b]
+//     }
+//     console.log(`Calculating`);
+//     obj[a + b] = a + b
+//     return obj[a + b]
+// }
+
+// console.log(sum(1,2))
+
+// let arr = [1,2,3]
+// let arr2 = [...arr]
+
+// arr2.push(4)
+// console.log(arr)
+
+// const find = () => {
+//     let num = Math.round(Math.random() * 10000000).toString(16)
+//     return '#' + num
+// }
+
+// console.log(find())
+
+// function Person(name, age) {
+//   this.name = name;
+//   this.age = age;
+// }
+// Person.prototype.display = function () {
+//   console.log(this.name, this.age);
+// };
+// function Employee(name, age, salary) {
+//   Person.call(this, name, age);
+//   this.salary = salary;
+// }
+// Object.setPrototypeOf(Employee.prototype,Person.prototype)
+// const emp = new Employee("Mike", 20, 4000);
+// console.log(Employee.prototype.constructor)
+// emp.display()
+
+// let count = 10;
+// let timer = setInterval(() => {
+//   console.log(count);
+//   count--
+//   if(count === 0)clearInterval(timer)
+// },1000);
+
+// let obj1 = { name: "Amras", place: "Chalad" };
+// const obj2 = { name: "Rezin", place: "Varam" };
+// const obj3 = { name: "Rashi", place: "Areela" };
+
+// const weak = new WeakMap([
+//   [obj1, "obj1"],
+//   [obj2, "obj2"],
+//   [obj3, "obj3"],
+// ]);
+
+// function logWeakMap(weakMap, keys) {
+//   keys.forEach((key) => {
+//     console.log(key, weakMap.get(key));
+//   });
+// }
+// logWeakMap(weak, [obj1, obj2, obj3]);
+
+// console.log(weak.has(obj1));
+
+// let arr = [
+//   [12, 14],
+//   [16, 18],
+//   [20, 22],
+// ];
+
+// let newArr = arr.flatMap((x) => x.map(x=>x*2));
+// console.log(newArr);
+
+
+// const target = { name: "Amras", place: "Chalad" };
+
+// const handler = {
+//     get(target, prop, reciever) {
+        
+//         return target[prop].split('').map((val,i) => target[prop].charCodeAt(i))
+//     }
+// }
+
+
+// const proxy = new Proxy(target, handler)
+
+
+const obj1 = {
+    name: 'Amras',
+    getName(){
+        return `Hi ${this.name}`
+    } 
 }
 
-console.log(sum(1,2))
-console.log(sum(1,2))
+const obj2 = {
+    name:'Rashid'
+}
+
+obj2.__proto__ = obj1
+
+// Object.setPrototypeOf(obj2,obj1)
+console.log(obj2.getName())

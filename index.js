@@ -1,17 +1,22 @@
-const express = require('express')
-const OS = require('os')
+const express = require("express");
+const path = require("path");
+const { exec } = require("child_process");
+const url = "https://www.youtube.com/";
+cmdCommand = `start chrome /new-tab ${url}`;
 
-const app = express()
+const app = express();
+// app.use(express.static(__dirname));
 
-app.get('/', (req,res)=> {
-    console.log(OS.cpus().length)
-    res.send('<a href="/about"><button>About</button></a>')
-})
+app.get("/", (req, res) => {
+  exec(cmdCommand);
 
-app.get('/about',(req,res) => {
-    res.send("About Page")
-})
+  res.send('<h1>Home</h1><a href="/about"><button>About</button></a>');
+});
 
-app.listen(3000,()=>{
-    console.log(`Server running on http://localhost:3000`)
-})
+app.get("/about", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.listen(3000, () => {
+  console.log(`Server running on http://localhost:3000`);
+});

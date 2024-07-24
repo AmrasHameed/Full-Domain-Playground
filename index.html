@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>
+            Hi Normal Dom
+        </h1>
+    </div>
+    <my-custom-element id = 'shadow'></my-custom-element>
+  <script>
+    const host = document.getElementById('shadow')
+    const shadow = host.attachShadow({mode:'open'})
+    shadow.innerHTML = '<h1 id="heading">Hi Shadow DOM</h1>'
+    shadow.getElementById('heading').style.color = 'green';
+  </script>
+</body>
+
+</html>
