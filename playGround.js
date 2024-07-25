@@ -293,18 +293,21 @@ const { error } = require("console");
 // const proxy = new Proxy(target, handler)
 
 
-const obj1 = {
-    name: 'Amras',
-    getName(){
-        return `Hi ${this.name}`
-    } 
-}
+// const obj1 = {
+//     name: 'Amras',
+//     getName(){
+//         return `Hi ${this.name}`
+//     } 
+// }
 
-const obj2 = {
-    name:'Rashid'
-}
+// const obj2 = {
+//     name:'Rashid'
+// }
 
-obj2.__proto__ = obj1
+// obj2.__proto__ = obj1
 
-// Object.setPrototypeOf(obj2,obj1)
-console.log(obj2.getName())
+// // Object.setPrototypeOf(obj2,obj1)
+// console.log(obj2.getName())
+
+
+
